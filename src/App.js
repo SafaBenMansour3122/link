@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import Photo from './photo.jpg'
 
-function App() {
+class App extends React.Component {
+  render(){
+    this.Data={
+      photo:Photo,
+      Name:{firstName:"Safa", lastName:"Ben Mansour"},
+      profileLinkFb:"https://facebook.com",
+      profileLinkedIn:"http://linkedin.com"
+    }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <div>
+      <img src={this.Data.photo}/>
+
+<button onClick={()=>{window.location=this.Data.profileLinkFb}}>My Facebook</button>
+<button onClick={()=>{window.location=this.Data.profileLinkedIn}}>My LinkedIn</button>
+
+
+     </div>
   );
+}
 }
 
 export default App;
